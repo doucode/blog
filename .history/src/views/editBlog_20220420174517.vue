@@ -83,9 +83,10 @@ export default {
     blogId () {
       // 加载数据
       tag.getTag().then(res => {
-        this.tags = res.data.data
+        this.tags = res.data
       })
       blog.getBlogById(this.blogId, true).then(res => {
+        console.log(res.data)
         res = res.data
 
         this.title = res.data.title

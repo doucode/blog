@@ -14,25 +14,15 @@
             index="1"
             route="/"
           >首页</el-menu-item>
-          <!-- <el-menu-item
+          <el-menu-item
             index="2"
             style="margin-left: 2%"
             route="/message"
-          >留言板</el-menu-item> -->
-          <el-menu-item
-            index="2"
-            style="margin-left: 2%"
-            route="#"
           >留言板</el-menu-item>
-          <!-- <el-menu-item
+          <el-menu-item
             index="3"
             style="margin-left: 2%"
             route="/announcement"
-          >本站公告</el-menu-item> -->
-          <el-menu-item
-            index="3"
-            style="margin-left: 2%"
-            route="#"
           >本站公告</el-menu-item>
 
           <el-menu-item
@@ -47,16 +37,11 @@
             style="width: 20%;float: left;margin: 10px 2% 0px -5%"
             class="hidden-xs-only"
           >
-            <!-- <el-input
-              placeholder="搜索博客"
-              v-model="searchTxt"
-              suffix-icon="el-icon-search"
-              @keyup.enter.native="searchSubmit"
-            /> -->
             <el-input
               placeholder="搜索博客"
               v-model="searchTxt"
               suffix-icon="el-icon-search"
+              @keyup.enter.native="searchSubmit"
             />
           </div>
 
@@ -197,7 +182,7 @@
               <i class="el-icon-edit"></i>
               写博客
             </el-menu-item>
-            <!-- <el-menu-item
+            <el-menu-item
               route="/myBlog"
               index="4-3"
             >&nbsp;&nbsp;&nbsp;
@@ -219,7 +204,7 @@
             >
               &nbsp;&nbsp;&nbsp;
               <i class="el-icon-loading"></i>管理后台
-            </el-menu-item> -->
+            </el-menu-item>
 
             <el-menu-item @click="logout">&nbsp;&nbsp;&nbsp;
               <i class="el-icon-switch-button" />退出登录

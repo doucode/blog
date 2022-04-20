@@ -83,13 +83,16 @@ export default {
     blogId () {
       // 加载数据
       tag.getTag().then(res => {
-        this.tags = res.data.data
+        this.tags = res.data
       })
       blog.getBlogById(this.blogId, true).then(res => {
         res = res.data
 
         this.title = res.data.title
         this.body = res.data.content
+
+        console.log(res.data.tags)
+
         this.checkboxGroup = res.data.tags.map(t => t.id) // 填充标签
       })
     }

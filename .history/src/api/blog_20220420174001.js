@@ -57,7 +57,7 @@ export default {
     return request({
       url: '/blog/' + blogId,
       method: 'put',
-      data: { blogTitle, blogBody, tagId }
+      data: qs.stringify({ 'blogTitle': blogTitle, 'blogBody': blogBody, 'tagId': tagId })
     })
   },
   adminDeleteBlog(blogId) { // 管理员删除博客

@@ -57,6 +57,7 @@
               placeholder="搜索博客"
               v-model="searchTxt"
               suffix-icon="el-icon-search"
+              @keyup.enter.native="#"
             />
           </div>
 

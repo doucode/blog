@@ -27,7 +27,7 @@
     </el-card>
 
     <el-card id="tags">
-      <div>
+      <!-- <div>
         <p class="el-icon-mouse">选择一个以上标签</p>
         <el-checkbox-group v-model="checkboxGroup">
           <el-checkbox
@@ -40,7 +40,7 @@
             {{tag.name}}
           </el-checkbox>
         </el-checkbox-group>
-      </div>
+      </div> -->
 
       <el-button
         style="margin-top: 3%;"
@@ -83,9 +83,10 @@ export default {
     blogId () {
       // 加载数据
       tag.getTag().then(res => {
-        this.tags = res.data.data
+        this.tags = res.data
       })
       blog.getBlogById(this.blogId, true).then(res => {
+        console.log(res.data)
         res = res.data
 
         this.title = res.data.title

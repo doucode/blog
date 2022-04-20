@@ -27,7 +27,7 @@
     </el-card>
 
     <el-card id="tags">
-      <div>
+      <!-- <div>
         <p class="el-icon-mouse">选择一个以上标签</p>
         <el-checkbox-group v-model="checkboxGroup">
           <el-checkbox
@@ -40,7 +40,7 @@
             {{tag.name}}
           </el-checkbox>
         </el-checkbox-group>
-      </div>
+      </div> -->
 
       <el-button
         style="margin-top: 3%;"
@@ -83,7 +83,7 @@ export default {
     blogId () {
       // 加载数据
       tag.getTag().then(res => {
-        this.tags = res.data.data
+        this.tags = res.data
       })
       blog.getBlogById(this.blogId, true).then(res => {
         res = res.data
@@ -96,19 +96,19 @@ export default {
   },
   methods: {
     editBlog () { // 更改博客
-      if (this.checkboxGroup.length <= 0 || this.title.length <= 0 || this.body.length <= 0) {
-        this.$message({
-          type: 'error',
-          message: '字段不完整'
-        })
-        return
-      }
+      // if (this.checkboxGroup.length <= 0 || this.title.length <= 0 || this.body.length <= 0) {
+      //   this.$message({
+      //     type: 'error',
+      //     message: '字段不完整'
+      //   })
+      //   return
+      // }
 
-      var tags = this.checkboxGroup
-      var tagStr = ''
-      for (var i = 0; i < tags.length; i++) {
-        if (i != tags.length - 1) { tagStr = tagStr + tags[i] + ',' } else { tagStr = tagStr + tags[i] }
-      }
+      // var tags = this.checkboxGroup
+      // var tagStr = ''
+      // for (var i = 0; i < tags.length; i++) {
+      //   if (i != tags.length - 1) { tagStr = tagStr + tags[i] + ',' } else { tagStr = tagStr + tags[i] }
+      // }
 
       blog.editBlog(this.blogId, this.title, this.body, tagStr).then(res => {
         this.$alert('修改成功', '提示', {
