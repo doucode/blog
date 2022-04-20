@@ -19,23 +19,13 @@
             style="margin-left: 2%"
             route="/message"
           >留言板</el-menu-item> -->
-          <el-menu-item
-            index="2"
-            style="margin-left: 2%"
-            route="#"
-          >留言板</el-menu-item>
           <!-- <el-menu-item
             index="3"
             style="margin-left: 2%"
             route="/announcement"
           >本站公告</el-menu-item> -->
-          <el-menu-item
-            index="3"
-            style="margin-left: 2%"
-            route="#"
-          >本站公告</el-menu-item>
 
-          <el-menu-item
+          <!-- <el-menu-item
             id="space"
             index=""
             @click="egg"
@@ -47,18 +37,13 @@
             style="width: 20%;float: left;margin: 10px 2% 0px -5%"
             class="hidden-xs-only"
           >
-            <!-- <el-input
-              placeholder="搜索博客"
-              v-model="searchTxt"
-              suffix-icon="el-icon-search"
-              @keyup.enter.native="searchSubmit"
-            /> -->
             <el-input
               placeholder="搜索博客"
               v-model="searchTxt"
               suffix-icon="el-icon-search"
+              @keyup.enter.native="searchSubmit"
             />
-          </div>
+          </div> -->
 
           <el-menu-item
             class="hidden-xs-only"
