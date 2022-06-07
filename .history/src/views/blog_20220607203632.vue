@@ -229,6 +229,7 @@ export default {
       body: '', // 博文内容
       discussCount: 0, // 评论数
       blogViews: 0, // 浏览数
+      publishedAt: '', // 发布时间
       time: 0, // 发布事件
       userName: '', // 博客用户名
       tags: [], // 博文标签
@@ -315,7 +316,7 @@ export default {
         this.body = res.data.content
         this.discussCount = 0
         this.blogViews = 0
-        this.time = res.data.publishedAt
+        this.time = res.data.publishedAt.substring(0, 10)
         this.userName = res.data.user_id
         this.tags = res.data.category_id
         this.userReward = res.data.user.reward

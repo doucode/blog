@@ -229,6 +229,7 @@ export default {
       body: '', // 博文内容
       discussCount: 0, // 评论数
       blogViews: 0, // 浏览数
+      publishedAt: '', // 发布时间
       time: 0, // 发布事件
       userName: '', // 博客用户名
       tags: [], // 博文标签
@@ -302,13 +303,22 @@ export default {
         console.log(res.data)
         res = res.data
 
+        // this.title = res.data.title
+        // this.body = res.data.body
+        // this.discussCount = res.data.discussCount
+        // this.blogViews = res.data.blogViews
+        // this.time = res.data.time
+        // this.userName = res.data.user.name
+        // this.tags = res.data.tags
+        // this.userReward = res.data.user.reward
+
         this.title = res.data.title
         this.body = res.data.content
-        this.discussCount = res.data.discussCount
-        this.blogViews = res.data.blogViews
-        this.time = res.data.time
-        this.userName = res.data.user.name
-        this.tags = res.data.tags
+        this.discussCount = 0
+        this.blogViews = 0
+        this.time = res.data.publishedAt.substring(0, 10) + ' ' + blog.publishedAt.substring(11, 16)
+        this.userName = res.data.user_id
+        this.tags = res.data.category_id
         this.userReward = res.data.user.reward
 
         // 设置cookies

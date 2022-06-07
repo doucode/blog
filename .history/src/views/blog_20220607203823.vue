@@ -316,10 +316,8 @@ export default {
         this.body = res.data.content
         this.discussCount = 0
         this.blogViews = 0
-
-        var a = ' '
-        this.time = res.data.publishedAt.substring(0, 10) + a + res.data.publishedAt.substring(11, 16)
-        this.userName = res.data.username
+        this.time = res.data.publishedAt.substring(0, 10) +‘’+ res.data.publishedAt.substring(11, 16)
+        this.userName = res.data.user_id
         this.tags = res.data.category_id
         this.userReward = res.data.user.reward
 
