@@ -6,8 +6,8 @@ import router from '@/router/router'
 // 创建axios实例
 var prod
 const service = axios.create({
-  // baseURL: '/api', // api的base_url
-  baseURL: 'localhost:1016',
+  baseURL: '/api', // api的base_url
+  // baseURL: 'http://localhost:1016/',
   timeout: 15000, // 请求超时时间,
   header: 'Content-Type:application/x-www-form-urlencoded'
 })
@@ -35,6 +35,14 @@ service.interceptors.response.use(
     const res = response.data
 
     if ((typeof (res.code) !== 'undefined' && res.code != 200) || (typeof (res.status) !== 'undefined' && res.status != true)) {
+      if (res.code == 422) {
+        Message({
+          message: '手机号未注册',
+          type: 'error',
+          duration: 5 * 1000
+        })
+      }
+
       if (typeof (res.code) !== 'undefined' && res.code != 403) {
         // 开发环境
         // Message({
@@ -88,9 +96,18 @@ service.interceptors.response.use(
     var message
     if (error.response.status == 504) {
       message = '连接超时'
+    } else if (error.response.status == 422) {
+      if (error.response.data.code == 423) {
+        message = '手机号已注册'
+      } else {
+        message = '手机号未注册'
+      }
+    } else if (error.response.status == 400) {
+      message = '密码错误'
     } else {
       message = error.message
     }
+
     Message({
       message: message,
       type: 'error',

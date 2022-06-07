@@ -22,7 +22,7 @@
         :id="blog.id"
         :title="blog.title"
         :body="blog.content"
-        :time="blog.publishedAt"
+        :time="blog.publishedAt.substring(0,10)+' '+blog.publishedAt.substring(11,16)"
         :blogViews="0"
         :discussCount="0"
         :name="blog.username"

@@ -22,11 +22,11 @@
         :id="blog.id"
         :title="blog.title"
         :body="blog.content"
-        :time="blog.publishedAt"
+        :time="blog.publishedAt[:10]"
         :blogViews="0"
         :discussCount="0"
         :name="blog.username"
-        :tags="blog.tags"
+        :tags="blog.category_id"
       />
     </div>
 
