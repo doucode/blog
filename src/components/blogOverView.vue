@@ -58,7 +58,7 @@
           style="width: 40%"
         >&nbsp;{{time}}</span>
 
-        <span
+    <!-- <span
           class="el-icon-view hidden-xs-only"
           style="width: 15%"
         >&nbsp;{{blogViews}}</span>
@@ -66,7 +66,7 @@
         <span
           class="el-icon-chat-line-square hidden-xs-only"
           style="width: 10%"
-        >&nbsp;{{discussCount}}</span>
+        >&nbsp;{{discussCount}}</span> -->
 
         <span
           class="el-icon-user-solid hidden-xs-only"
