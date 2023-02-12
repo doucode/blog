@@ -15,7 +15,7 @@
         <p>
           <span class="el-icon-time hidden-xs-only">&nbsp;{{time}}</span>
 
-          <span
+      <!--    <span
             class="el-icon-view hidden-xs-only"
             style="margin-left: 100px"
           >&nbsp;{{blogViews}}</span>
@@ -23,7 +23,7 @@
           <span
             class="el-icon-chat-line-square hidden-xs-only"
             style="margin-left: 100px"
-          >&nbsp;{{discussCount}}</span>
+          >&nbsp;{{discussCount}}</span> -->
           <span
             class="el-icon-user-solid hidden-xs-only"
             style="margin-left: 150px"
