@@ -398,6 +398,13 @@ export default {
         })
         return
       }
+      if (this.form.registerInviteCode != "123321") {
+        this.$message({
+          message: '邀请码错误',
+          type: 'error'
+        })
+        return
+      }
       var reg = new RegExp(/^([a-zA-Z0-9._-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/)
 
       if (!reg.test(this.form.registerMail)) { // 检测字符串是否符合正则表达式
