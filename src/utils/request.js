@@ -6,8 +6,8 @@ import router from '@/router/router'
 // 创建axios实例
 var prod
 const service = axios.create({
-  // baseURL: '/api', // api的base_url
-  baseURL: 'http://localhost:1016/',
+  baseURL: '/api', // api的base_url
+  //baseURL: 'http://localhost:1016/',
   timeout: 15000, // 请求超时时间,
   header: 'Content-Type:application/x-www-form-urlencoded'
 })
